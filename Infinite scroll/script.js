@@ -52,7 +52,9 @@ const  getmoredata = () =>{
 
 window.addEventListener('scroll', () =>{
     const {scrollHeight,scrollTop,clientHeight} = document.documentElement;
-    if(clientHeight+scrollTop >= scrollHeight) {
+    console.log(clientHeight+scrollTop, scrollHeight);
+    if(clientHeight+scrollTop+2 >= scrollHeight) {
+        console.log("working")
         getmoredata();
     }
 })

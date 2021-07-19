@@ -11,7 +11,7 @@ let postno = 0;
 const getpost = async() =>{
     let resp = await fetch(`https://jsonplaceholder.typicode.com/posts?_limit=${limit}&_page=${currpage}`);
     let data = await resp.json();
-    console.log(data);
+    // console.log(data);
 
     data.map(()=>{
         // <div class="post_content">
@@ -21,20 +21,38 @@ const getpost = async() =>{
         // <h3>heading</h3>
         const title = document.createElement('h3');
         title.innerHTML = data[postno].title;
-        // console.log(data)
 
         // <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci voluptate repellendus numquam
-        //     tenetur deleniti, molestiae voluptas cupiditate nobis fugit. Alias, adipisci. Culpa voluptatum nobis
-        //     deleniti iure minima ex autem nulla?</p>
 
         const body = document.createElement('p');
         body.innerHTML = data[postno].body;
-
+        
+        //appending heading
         div.appendChild(title);
+        // appending title
         div.appendChild(body);
+
+        // appending post to main container
         posts.appendChild(div);
+
         postno++;
+        
     })
+    postno = 0;
 }
 
 getpost()
+
+const  getmoredata = () =>{
+    setTimeout(() =>{
+        currpage++;
+        getpost();
+    },50);
+}
+
+window.addEventListener('scroll', () =>{
+    const {scrollHeight,scrollTop,clientHeight} = document.documentElement;
+    if(clientHeight+scrollTop >= scrollHeight) {
+        getmoredata();
+    }
+})

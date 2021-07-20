@@ -4,16 +4,34 @@ const posts = document.getElementById('posts');
 let currpage = 1;
 let limit = 5;
 let postno = 0;
-
+let arr = [];
+console.log("empty arr")
+console.table(arr)
 
 
 
 const getpost = async() =>{
     let resp = await fetch(`https://jsonplaceholder.typicode.com/posts?_limit=${limit}&_page=${currpage}`);
-    let data = await resp.json();
-    // console.log(data);
+    
+    let dataarr = [];
+    console.log('empty dataarr');
+    
 
-    data.map(()=>{
+
+    let data = await resp.json();
+    console.log(data);
+    
+    data.forEach(element => {
+        dataarr.push(element);
+    });
+    console.table(dataarr);
+
+    dataarr = [...arr, ...dataarr];
+    console.table(arr);
+
+
+
+    dataarr.map(()=>{
         // <div class="post_content">
         const div = document.createElement('div');
         div.setAttribute('class',"post_content");
@@ -52,9 +70,9 @@ const  getmoredata = () =>{
 
 window.addEventListener('scroll', () =>{
     const {scrollHeight,scrollTop,clientHeight} = document.documentElement;
-    console.log(clientHeight+scrollTop, scrollHeight);
+    // console.log(clientHeight+scrollTop, scrollHeight);
     if(clientHeight+scrollTop+2 >= scrollHeight) {
-        console.log("working")
+        // console.log("working")
         getmoredata();
     }
 })

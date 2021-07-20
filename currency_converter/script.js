@@ -19,6 +19,11 @@ amount.addEventListener('change', () =>{
     a = amount.value;
     apirequest()
 })
+amount.addEventListener('keyup', (e) =>{
+    amount.value = e.target.value
+    a = (amount.value);
+    apirequest();
+})
 
 swap.addEventListener('click', () =>{
     let val = cur1.value;
@@ -34,6 +39,7 @@ swap.addEventListener('click', () =>{
 const apirequest = async() =>{
     const resp = await fetch(`https://v6.exchangerate-api.com/v6/9eb13cec034bcf7118d8275b/pair/${cur1.value}/${cur2.value}`);
     const obj = await resp.json();
+
     amt2.value = a * obj.conversion_rate;
 }
 

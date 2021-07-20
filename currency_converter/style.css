@@ -1,0 +1,37 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    margin-top: 2rem;
+    background: rgb(82, 73, 73);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.container{
+    margin-top: 3rem;
+    background: white;
+    height: 40vh;
+    width: 30vw;
+    padding: 1rem;
+}
+.content{
+    margin-top: 2rem;
+}
+
+.swap{
+    margin-top: 2rem;
+    outline: none;
+}
+
+input{
+    width: 2rem;
+    margin-left: 5rem;
+    outline-style: none;
+    border: none;
+}

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+</head>
+<body>
+    <div class="container">
+        <form action="#">
+            <div class="page-1">
+                <h1>Account Information</h1>
+                <div>
+
+                    <div><label for="username">Username</label></div>
+                    <div><input type="text" id="Username" required></div>
+                </div>
+                
+                <div>
+                    <div><label for="password">Password</label></div>
+                    <div><input type="password" id="password" required></div>
+
+                </div>
+
+                <div>
+                    <div><label for="confirm-password">Confirm Password</label></div>
+                    <div><input type="password" id="confirm-password" required></div>
+
+                </div>
+
+                <div class="next-btn">
+                    <div><button>Next</button></div>
+                </div>
+
+
+            </div>
+            <div class="page-2">
+                <h1>Educational Information</h1>
+                <div class="eduction_level">
+                    <div>
+                        <label for="Education-level">Education Level</label>
+                        <select name="education" id="eduction" required>
+                            <option value="Graduate">Graduate</option>
+                            <option value="Graduate">Graduate</option>
+                            <option value="Graduate">Graduate</option>
+                            <option value="Graduate">Graduate</option>
+                            <option value="Graduate">Graduate</option>
+                        </select>
+                    </div>
+                    <div class="field">
+                        <label for="field_of_study">Field of Study</label>
+                        <select name="education" id="eduction" required>
+                            <option value="Graduate">Graduate</option>
+                            <option value="Graduate">Graduate</option>
+                            <option value="Graduate">Graduate</option>
+                            <option value="Graduate">Graduate</option>
+                            <option value="Graduate">Graduate</option>
+                        </select>
+                    </div>
+
+                    <div class="university">
+                        <label for="university">University</label>
+                        <input type="text">
+                    </div>
+
+                    <div class="time">
+                        <span>Time Period</span>
+                        <input type="number" name="start-year" id="start-year" min="1980" max="2024" step="1" value="2020">
+                        <span>To</span>
+                        <input type="number" name="start-year" id="start-year" min="1980" max="2024" step="1" value="2020">
+
+                    </div>
+
+                    <div>
+                        <button>Previous</button>
+                        <button>Next</button>
+
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="page-3">
+                <h1>Personal Information</h1>
+                <div>
+                    <label for="job-title">Job Title</label>
+                    <input type="text" id="job-title">
+                </div>
+                <div>
+                    <label for="company">Company</label>
+                    <input type="text" id="company">
+                </div>
+
+                <div>
+                    <label for="city">City</label>
+                    <input type="text" id="city">
+                </div>
+
+                <div>
+                    <label for="time">Time Period</label>
+                    <input type="number" id="time" min="1987" max="2021" step="1" value="2020">
+                    <span>To</span>
+                    <input type="number" id="time2" min="1987" max="2021" step="1" value="2020">
+                </div>
+
+                <div>
+                    <button>Submit</button>
+                </div>
+            </div>
+        </form>
+    </div>
+    
+</body>
+</html>

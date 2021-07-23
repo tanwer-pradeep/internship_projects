@@ -9,9 +9,7 @@ const p3 = document.getElementById('p3');
 
 function valid1(){
     if(((username.value).length >= 6) && intpass.value.length > 4 && intpass.value === cnfrmpass.value){
-        // console.log(username.value);
-        // console.log(intpass.value);
-        // console.log(cnfrmpass.value);
+        
         p1.classList.remove('show');
         p2.classList.add('show');
         
@@ -24,11 +22,16 @@ function valid1(){
             } 
         }
         else if(intpass.value !== cnfrmpass.value)alert("password doesn't matches");
-        // alert("somthing went wrong");
     }
 }
 
-next.addEventListener('click',valid1)
+next.addEventListener('click',valid1);
+username.addEventListener('keyup', ()=>{
+    console.log("called")
+    if(username.value.length < 6){
+        username.setAttribute('data-error', 'minimum 6 characters required');
+    }
+})
 
 
 
@@ -103,11 +106,13 @@ back2.addEventListener('click', () => {
 // handling submit
 
 const fsubmit = document.getElementById('submit');
-// console.log(fsubmit);
 
 fsubmit.addEventListener('click', () =>{
-    // e.preventDefault();
     if(valid3){
+        console.log(job.length);
+
         alert('form submitted');
+    }else{
+        alert('else called');
     }
 })

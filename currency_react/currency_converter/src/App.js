@@ -37,9 +37,11 @@ function App() {
 
   useEffect(() => {
     if (fromCurrency != null && toCurrency != null) {
+      // console.log('called');
       fetch(`${BASE_URL}?base=${fromCurrency}&symbols=${toCurrency}`)
         .then(res => res.json())
-        .then(data => setExchangeRate(data.rates[toCurrency]))
+        .then(data => 
+          setExchangeRate(data.rates[toCurrency]))
     }
   }, [fromCurrency, toCurrency])
 
